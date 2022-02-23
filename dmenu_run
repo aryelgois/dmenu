@@ -1,2 +1,2 @@
 #!/bin/sh
-dmenu_path | dmenu "$@" | ${SHELL:-"/bin/sh"} &
+dmenu_path | dmenu "$@" | sed '1 s/^/exec /' | ${SHELL:-"/bin/sh"} &
